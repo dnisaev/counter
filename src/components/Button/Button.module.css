@@ -1,0 +1,31 @@
+.button {
+    height: 30px;
+    min-width: 100px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: black;
+
+    color: white;
+    font-size: 16px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: white;
+    color: black;
+}
+
+.buttonStop {
+    height: 30px;
+    min-width: 100px;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    background-color: lightgrey;
+
+    /*color: darkslategrey;*/
+    font-size: 16px;
+    font-weight: 900;
+
+    opacity: 50%;
+}
