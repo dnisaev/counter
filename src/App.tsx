@@ -29,12 +29,6 @@ export const App = () => {
             setSettingsButtonIsDisable(false)
         }
     };
-    const newSettingsForCounter = () => {
-        setCurrentSumCounter(settingsMinValue)
-        setMaxValueForCounter(settingsMaxValue)
-        setMinValueForCounter(settingsMinValue)
-        setSettingsButtonIsDisable(true)
-    };
 
     // Counter
 
@@ -46,6 +40,12 @@ export const App = () => {
 
     const valuesIsNotCorrect = () => {
         return settingsMinValue < 0 || settingsMaxValue < 0 || settingsMinValue >= settingsMaxValue
+    };
+    const newSettingsForCounter = () => {
+        setCurrentSumCounter(settingsMinValue)
+        setMaxValueForCounter(settingsMaxValue)
+        setMinValueForCounter(settingsMinValue)
+        setSettingsButtonIsDisable(true)
     };
 
     return (
