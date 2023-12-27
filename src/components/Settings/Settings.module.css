@@ -22,7 +22,7 @@
     background-color: whitesmoke;
 
     color: black;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 900;
 
     display: flex;
@@ -34,30 +34,31 @@
 
 .settingsMaxValue, .settingsMinValue {
     width: 100%;
-    margin: 5px;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
 }
 
 input {
     border: 1px solid lightgrey;
     border-radius: 5px;
-    max-width: 40%;
+    max-width: 60%;
     height: 30px;
     font-size: 20px;
     font-weight: 700;
     outline: none;
+    margin: 5px;
 }
 
 .inputValuesIsNotCorrect {
     border: 1px solid red;
     border-radius: 5px;
-    max-width: 40%;
+    max-width: 60%;
     height: 30px;
     font-size: 20px;
     font-weight: 700;
     outline: none;
+    margin: 5px;
     color: red;
 }
 

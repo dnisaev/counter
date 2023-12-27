@@ -26,14 +26,14 @@ export const Settings = ({
             <div className={styles.settingsMain}>
                 <div className={styles.settingsValues}>
                     <div className={styles.settingsMaxValue}>
-                        <span>Максимум: </span>
+                        <span>Максимум:</span>
                         <input className={valuesIsNotCorrect ? styles.inputValuesIsNotCorrect : ''}
                                value={settingsMaxValue}
                                type={'number'}
                                onChange={onChangeSettingsMaxValue}/>
                     </div>
                     <div className={styles.settingsMinValue}>
-                        <span>Минимум: </span>
+                        <span>Минимум:</span>
                         <input className={valuesIsNotCorrect ? styles.inputValuesIsNotCorrect : ''}
                                value={settingsMinValue}
                                type={'number'}
