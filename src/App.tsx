@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useState} from 'react';
+import React, {ChangeEvent, useEffect, useState} from 'react';
 import styles from './App.module.css';
 import {Settings} from "./components/Settings/Settings";
 import {Counter} from "./components/Counter/Counter";
@@ -47,6 +47,62 @@ export const App = () => {
         setMinValueForCounter(settingsMinValue)
         setSettingsButtonIsDisable(true)
     };
+
+    // LocalStorage
+
+    useEffect(() => {
+        let maxValueAsString = localStorage.getItem('settingsMaxValue');
+        if (maxValueAsString) {
+            let newMaxValue = JSON.parse(maxValueAsString)
+            setSettingsMaxValue(newMaxValue)
+        }
+
+        let minValueAsString = localStorage.getItem('settingsMinValue');
+        if (minValueAsString) {
+            let newMinValue = JSON.parse(minValueAsString)
+            setSettingsMinValue(newMinValue)
+        }
+
+        let currentValueAsString = localStorage.getItem('currentSumCounter');
+        if (currentValueAsString) {
+            let newCurrentValue = JSON.parse(currentValueAsString)
+            setCurrentSumCounter(newCurrentValue)
+        }
+
+        let maxValueForCounterAsString = localStorage.getItem('maxValueForCounter');
+        if (maxValueForCounterAsString) {
+            let newMaxValueForCounter = JSON.parse(maxValueForCounterAsString)
+            setMaxValueForCounter(newMaxValueForCounter)
+        }
+
+        let minValueForCounterAsString = localStorage.getItem('minValueForCounter');
+        if (minValueForCounterAsString) {
+            let newMinValueForCounter = JSON.parse(minValueForCounterAsString)
+            setMinValueForCounter(newMinValueForCounter)
+        }
+
+        let settingsButtonIsDisableAsString = localStorage.getItem('settingsButtonIsDisable');
+        if (settingsButtonIsDisableAsString) {
+            let newSettingsButtonIsDisable = JSON.parse(settingsButtonIsDisableAsString)
+            setSettingsButtonIsDisable(newSettingsButtonIsDisable)
+        }
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem('settingsMaxValue', JSON.stringify(settingsMaxValue))
+        localStorage.setItem('settingsMinValue', JSON.stringify(settingsMinValue))
+        localStorage.setItem('currentSumCounter', JSON.stringify(currentSumCounter))
+        localStorage.setItem('maxValueForCounter', JSON.stringify(maxValueForCounter))
+        localStorage.setItem('minValueForCounter', JSON.stringify(minValueForCounter))
+        localStorage.setItem('settingsButtonIsDisable', JSON.stringify(settingsButtonIsDisable))
+    }, [
+        settingsMaxValue,
+        settingsMinValue,
+        currentSumCounter,
+        maxValueForCounter,
+        minValueForCounter,
+        settingsButtonIsDisable
+    ]);
 
     return (
         <div className={styles.mainWrapper}>
